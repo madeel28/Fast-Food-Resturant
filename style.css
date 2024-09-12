@@ -1,0 +1,211 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior:smooth;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Jost", sans-serif;
+    /* background: blue; */
+}
+:root{
+    --bg-color:#fff;
+    --main-color:#4b9e22;
+    --text-color:#000;
+    --other-color:#83869c;
+    --secondary-color:#d9d9d9;
+
+    --h1-font:5.5rem;
+    --h2-font:2.8rem;
+    --p-font:1.1rem;
+}
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* background: var(--bg-color); */
+    background: #0000006c;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    justify-content: space-between;
+    padding: 20px 10%;
+    box-shadow: 0 2px 5px -2px #00001a;
+    transition: all .6s ease-in-out;
+}
+.logo {
+    width: 180px;
+    height: 100%;
+    /* object-fit: contain; */
+    color: var(--bg-color);
+}
+.nav-list{
+    display:flex;
+    gap: 30px;
+}
+.nav-list a{
+    display: inline-block;
+    color: var(--bg-color);
+    font-size: var(--p-font);
+    padding: 2px 0;
+    border-bottom: 2px solid transparent;
+    transition: all .3s ease-in-out;
+}
+.nav-list a:hover{
+    color: var(--main-color);
+    transform: scale(1.1);
+    border-bottom: 2px solid var(--main-color);
+    
+}
+.nav-content{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-content a{
+    color: var(--bg-color);
+    font-size: 23px;
+    transition: all .3s ease-in-out;
+}
+.nav-content a:hover{
+    transform: scale(1.1);
+    color: var(--main-color);
+}
+#menu-icon{
+    font-size: 2rem;
+    z-index: 1000001;
+    cursor: pointer;
+    margin-left: 10px;
+    display: none;
+}
+.bx-menu{
+    font-size: 1.5rem;
+    display: none;
+    color: var(--bg-color);
+    cursor: pointer;
+}
+.hero-content-container{
+    padding: 80px 10% ;
+}
+.hero{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/hero.jpg);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hero-content h1{
+    font-size: var(--h1-font);
+    font-weight: 700;
+    color: var(--bg-color);
+    margin: 10px 0 20px;
+    line-height: 1;
+}
+.hero-content h4{
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--bg-color);
+    letter-spacing: 4px;
+}
+.hero-content p{
+    font-size: 1.25rem;
+    color: var(--bg-color);
+    line-height: 1.5;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+.order-btn{
+    display: inline-block;
+    padding: 11px 40px;
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid var(--bg-color);
+    border-radius: 4px;
+    color: var(--bg-color);
+    letter-spacing: 2px;
+    transition: all .6s ease-in-out;
+}
+.order-btn:hover{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+
+@media screen and (max-width:1400px) {
+    header {
+        padding: 15px 5%;
+    }
+
+    section {
+        padding: 70px 5%;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    header {
+        padding: 15px 2%;
+    }
+
+    section {
+        padding: 70px 2%;
+    }
+
+    :root {
+        --h1-font: 5rem;
+        --h2-font: 2.3rem;
+        --p-font: 1rem;
+    }
+}
+@media screen and (max-width:870px) {
+    .nav-list {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 33%;
+        height: atuo;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--bg-color);
+        border-radius: 0px 0px 20px 20px;
+        padding: 10px 20px;
+        box-shadow: 0px 20px 20px rgb(15 54 55/ 20%);
+        clip-path: circle(144% at 0% 0%);
+        transition: all .55s ease-in-out;
+        gap: 20px;
+    }
+    #menu-icon,.me.bx-menu{
+        display: flex;
+    }
+    .nav-list a{
+        color: var(--text-color);
+        display: inline-block;
+        padding: 0;
+        font-size: 22px;
+        font-weight: 600;
+        border: none;
+
+    }
+    .nav-list a:hover{
+        border-bottom: none;
+    }
+    .nav-list.open{
+        right: 0;
+    }
+
+    section {
+        padding: 70px 5%;
+    }
+}
